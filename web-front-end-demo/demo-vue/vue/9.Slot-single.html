@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Vue单个插槽</title>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    </head>
+    <body>
+        <div id="app">
+            <children1>
+                <span>123456</span>
+            </children1>
+        </div>
+
+        <script type="text/javascript">
+            new Vue({
+                el:'#app',
+                components: {
+                    children1: {
+                        template: '<button><slot></slot>单个插槽</button>'
+                    }
+                }
+            });
+        </script>
+    </body>
+</html>

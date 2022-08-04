@@ -1,0 +1,49 @@
+<html>
+
+<head>
+    <title>样式模板</title>
+    <style type="text/css">
+        /*定义的网页的嵌入样式，该样式仅仅适合本网页*/
+        /*定义段落标签p的标签样式*/
+        p {
+            color: red;
+            font-size: 12px;
+            text-decoration: underline;
+            font-weight: bold;
+        }
+
+        /*定义了一个共享样式，该样式同样也可以修饰段落p*/
+        .mystyle {
+            color: blue;
+            font-size: 14px;
+            font-weight: bold;
+            font-family: 隶书；
+        }
+
+    </style>
+</head>
+
+<body>
+    <p>
+        1.测试标签样式规则
+    </p>
+    <p class="mystyle">
+        2.测试共享样式规则
+    </p>
+    <!--下面的段落中，定义了一个仅仅适合该段落的行内样式，行内样式不影响其他的行！！！-->
+    <p style="color:green;font-size:12px;font-family:黑体;">
+        3.测试行内样式规则
+    </p>
+    <p>
+        4.测试标签样式规则
+    </p>
+    <p class="mystyle">
+        5.测试共享样式规则
+    </p>
+    <!--下面的段落中，定义了一个仅仅适合该段落的行内样式，行内样式不影响其他的行！！！-->
+    <p style="color:red;font-size:16px;font-family:黑体;">
+        6.测试行内样式规则
+    </p>
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Vue具名插槽</title>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    </head>
+    <body>
+        <div id="app">
+            <children2>
+                <span slot="first" @click="tobeknow">123456</span>
+                <span slot="second">78910</span>
+            </children2>
+        </div>
+
+        <script type="text/javascript">
+            new Vue({
+                el:'#app',
+                methods: {
+                    tobeknow: function () {
+                        console.log("It is the parent's method");
+                    }
+                },
+                components: {
+                    children2: {  //这个无返回值，不会继续派发
+                        template: '<button><slot name="first"></slot>具名插槽，<slot name="second"></slot></button>'
+                    }
+                }
+            });
+        </script>
+    </body>
+</html>

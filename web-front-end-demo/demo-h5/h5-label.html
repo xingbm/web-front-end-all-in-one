@@ -1,0 +1,144 @@
+<!--
+声明：<!DOCTYPE>
+因为HTML有多个版本，只有文件中声明使用的哪个版本，浏览器才能正确展示页面
+各种版本的声明方式：
+HTML5:
+    <!DOCTYPE html>
+HTML4.01:
+    <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN""http://www.w3.org/TR/html4/loose.dtd">
+XHTML1.0:
+    <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN""http://www.w3.org/TR/xhtml1-transitional.dtd">
+-->
+<!DOCTYPE html>
+
+<!--lang展示语言 en:英文 zh:中文 也可以不带参数-->
+<html lang="en">
+
+<head>
+    <!--数据编码格式-->
+    <meta charset="UTF-8">
+    <!--标签名-->
+    <title>标签名</title>
+
+</head>
+
+<body>
+    Gamin
+    你好
+
+    <!--h标签 不同大小的加粗文字 根据自己需要的大小来指定使用哪个标签-->
+    <h1>标题h1</h1>
+    <h2>标题h2</h2>
+    <h3>标题h3</h3>
+    <h3>标题h4</h3>
+    <h5>标题h5</h5>
+    <h6>标题h6</h6>
+
+    <!--p标签 定义一个段落 没在标签内的字符自动换行-->
+    <p>hello gamin</p>
+    你好
+
+    <!--a标签 超链接-->
+    <a href="https://www.baidu.com">打开网络百度首页</a>
+
+    <!--img标签 -->
+    <img src="images/logo_end.png">
+
+    <!--
+    一、HTML元素
+    1.元素指的是从开始标签到结束标签的所有代码
+    开始标签/开放标签       元素内容        结束标签/闭合标签
+    <p>                   string        </p>
+    空标签/空元素 里面没有元素内容
+    可以用来换行，但是用p标签和空标签的行间距是不一样的
+    <br/>      可用来换行
+    -->
+    <p>this is my web page</p>
+    hello world! <br />
+    hello china!
+
+    <!--
+    2.HTML元素语法
+    元素的内容是指开始标签与结束标签之间的内容
+    空元素在开始标签中进行关闭
+    大多数HTML元素可拥有属性
+    -->
+
+    <!--
+    3.嵌套的HTML元素
+    大多数的HTML元素都是可以嵌套的
+    -->
+    <p><a>嵌套</a></p>
+
+
+    <!--
+    二、HTML属性
+    1.标签可以拥有属性为元素提供更多的信息
+    2.属性以键/值对的形式出现
+        如：href = "www.baidu.com"
+    3.常用的标签属性：
+        <h1>:align 对齐方式
+        <body>:bgcolor 背景颜色  整个呈现内容的背景色
+              :background 背景图片
+        <a>:target 规定在何处打开链接
+    4.通用属性：
+        class   : 规定元素的类名   规定类名的引用关系
+        id      : 规定元素唯一ID   规定ID的引用关系
+        style   : 规定元素的样式   一般会引入一些外部文件，如css样式等等，一般放在头文件
+        title   : 规定元素的额外信息
+    -->
+    <a href="index12.html">打开本地HTML文件</a>
+    <h1 align="right">标题一</h1>
+    <h1>标题二</h1>
+    <a href="index12.html">默认覆盖标签页打开</a>
+    <a href="index12.html" target="_self">默认覆盖标签页打开</a>
+    <a href="index12.html" target="_blank">在新标签页打开</a>
+    <a href="index12.html" target="_parent">没涉及到框架暂时无法测试</a>
+    <a href="index12.html" target="_top">没涉及到框架暂时无法测试</a>
+
+    <h2 class="h2ID">规定当前这个h2所代表的名称，以后css样式就可以引用这个名称，从而设置h2的一些显示效果</h2>
+    <h2 id="hID">作用和上面一样</h2>
+
+    <style type="text/css">
+        样式设置一般放在头文件head中，通过type引用css文件来设置页面样式
+    </style>
+
+
+    <!--
+    三、HTML格式化
+    <b>     定义粗体文字
+    <big>   定义大号字       big过时了，在HTML5中采取css样式把它代替掉
+    <em>    定义着重文字
+    <i>     定义斜体字
+    <small> 定义小号字
+    <strong>定义加重语气
+    <sub>   定义下标字
+    <sup>   定义上标字
+    <ins>   定义插入字
+    <del>   定义删除字
+    -->
+    默认文字！
+    <br />
+    <b>粗体文字</b>
+    <br />
+    <big>大号文字，有横杠表示过时</big>
+    <br />
+    <em>着重文字</em>
+    <br />
+    <i>斜体字</i>
+    <br />
+    <small>小号字</small>
+    <br />
+    <strong>加重语气</strong>
+    <br />
+    前面<sub>后面</sub>写一些文字不然看不见下标效果
+    <br />
+    前面<sup>后面</sup>下一些文字不然看不见上标效果
+    <br />
+    <ins>插入字</ins>
+    <br />
+    <del>删除字</del>
+
+</body>
+
+</html>

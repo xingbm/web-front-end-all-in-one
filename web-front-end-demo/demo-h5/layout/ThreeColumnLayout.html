@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>三列布局</title>
+    <style>
+        .container {
+            width: 800px;
+            margin: 0 auto;
+        }
+        .box {
+            width: 800px;
+            height: 600px;
+            text-align: center;
+            line-height: 60px;
+        }
+        .header {
+            width: 100%;
+            height: 60px;
+            background: orange;
+        }
+        .content {
+            position: relative;
+            width: 700px;
+            margin: 0 auto;
+        }
+        .content_body {
+            position: inherit;
+            width: 100%;
+            height: 500px;
+            background: palegoldenrod;
+        }
+        .content_footer {
+            position: inherit;
+            width: 100%;
+            height: 60px;
+            background: orangered;
+        }
+        .content_body_left {
+            width: 100px;
+            height: 100%;
+            float: left;
+            background: salmon;
+        }
+        .content_body_center {
+            width: 500px;
+            height: 100%;
+            float: left;
+            background: seagreen;
+        }
+        .content_body_right {
+            width: 100px;
+            height: 100%;
+            float: right;
+            background: burlywood;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            <div class="header">
+                header
+            </div>
+            <div class="content">
+                <div class="content_body">
+                    <div class="content_body_left">
+                        left
+                    </div>
+                    <div class="content_body_center">
+                        center
+                    </div>
+                    <div class="content_body_right">
+                        right
+                    </div>
+                </div>
+                <div class="content_footer">
+                    footer
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

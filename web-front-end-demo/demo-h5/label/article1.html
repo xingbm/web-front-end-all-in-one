@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <article>
+        <header>
+            <h1>article元素使用方法</h1>
+            <p>发表日期：<time pubdate="pubdate">2010/10/10</time></p>
+            　　
+        </header>
+
+        　　<p>此标签里显示的是article整个文章的主要内容，，下面的section元素里是对该文章的评论</p>
+        　　<section>
+            <h2>评论</h2>
+            <article>
+                <header>
+                    <h3>发表者：maizi</h3>
+                    <p><time pubdate datetime="2016-6-14">1小时前</time></p>
+                </header>
+                <p>这篇文章很不错啊，顶一下！</p>
+            </article>
+            <article>
+                <header>
+                    <h3>发表者：小妮</h3>
+                    <p><time pubdate datetime="2016-6-14T:21-26:00">1小时前</time></p>
+                　　　　　
+                </header>
+                <p>这篇文章很不错啊，对article解释的很详细</p>
+            　
+            </article>
+        </section>
+    </article>
+
+</body>
+
+</html>
+<!-- 示例内容分为几个部分，文章标题放在了header元素中，文章正文放在了header元素后面的p元素中，
+    然后section元素把正文与评论进行了区分（是一个分块元素，用来把页面中的内容进行区分），
+    在section元素中嵌入了评论的内容，评论中每一个人的评论相对来说又是比较独立的、完整的，
+    因此对它们都使用一个article元素，在评论的article元素中，又可以分为标题与评论内容部分，
+    分别放在header元素与p元素中。-->

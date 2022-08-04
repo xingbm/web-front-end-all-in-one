@@ -1,0 +1,19 @@
+/*正文内容字体设置*/
+body,table{
+     color:#666666;
+     font-size:12px;
+}
+a{
+	   color:#666666;
+	   font-size:12px;
+	   text-decoration:none;
+}
+a:hover{
+     color:red;
+     font-size:16px;
+     text-decoration:underline;	
+}
+.myinput{
+     border:1px dashed orange;	
+     background-color:#666666;
+}

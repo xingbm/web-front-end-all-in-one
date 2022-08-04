@@ -1,0 +1,31 @@
+html * {
+    margin: 0;
+    padding: 0;
+}
+
+.layout {
+    margin-bottom: 20px;
+}
+
+.layout article {
+    width: 100%;
+}
+
+.layout article > div {
+    min-height: 100px;
+}
+
+.layout article .left {
+    width: 300px;
+    background: red;
+}
+
+.layout article .center {
+    background: orange;
+}
+
+.layout article .right {
+    width: 300px;
+    background: blue;
+}
+
