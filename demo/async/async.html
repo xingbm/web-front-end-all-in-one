@@ -1,0 +1,35 @@
+﻿<html>
+	<header>
+		<title>async</title>
+		<script type="text/javascript" src="js/jquery-1.11.3.min.js" charset=utf-8></script>
+	</header>
+	<body>
+		<script type="text/javascript">
+			var asyncReadFile = async function () {
+				var f1 = await readFile('/etc/fstab');
+				var f2 = await readFile('/etc/shells');
+				console.log(f1.toString());
+				console.log(f2.toString());
+			};
+
+			var fs = require('fs');
+
+			var readFile = function (fileName) {
+			  return new Promise(function (resolve, reject) {
+			    fs.readFile(fileName, function(error, data) {
+			      if (error) reject(error);
+			      resolve(data);
+			    });
+			  });
+			};
+
+			var gen = function* () {
+			  var f1 = yield readFile('D:\web_test/fstab');
+			  var f2 = yield readFile('D:\web_test/shells');
+			  console.log(f1.toString());
+			  console.log(f2.toString());
+			};
+		</script>
+	</body>
+</html>
+

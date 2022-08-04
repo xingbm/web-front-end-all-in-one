@@ -1,0 +1,13 @@
+<html>
+<head>
+<title>Broadview</title>
+<meta name="keywords" content="Broadview、博文、博文视点">
+</head>
+<body>
+  <table width="780" border="0" align="center" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+   <tr>
+     <td>
+     </td>
+   <tr>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>日记列表</title>
+    <style>
+        .add_form {
+            width: 900px;
+            height: 50px;
+            font-size: 18px;
+            text-align: left;
+            background-color: aqua;
+        }
+        .content {
+            width: 900px;
+            height: auto;
+            text-align: center;
+            background-color: cadetblue;
+        }
+        .content_title {
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <div class="add_form">添加表单：<a href="./diary-form.html"><button>点我跳转到添加表单页面</button></a></div>
+    <div class="content"><div class="content_title">表单列表：</div></div>
+
+    <script type="text/javascript" src="../js/jquery-1.11.3.min.js"></script>
+    <script>
+        $(function(){
+            $.ajax({
+                type:"get",
+                url:"http://127.0.0.1:9000/nodesDiary/list",
+                dataType:"json",
+                success:function(res){
+                    var str = "<ul class='con_ul'>";
+                        str+= "<table border='1'> <tr><th>id</th><th>diaryDate</th><th>diaryTimeBegin</th><th>diaryTimeEnd</th><th>diaryType</th><th>diaryContent</th></tr>";
+                    $.each(res.data, function(idx,val) {
+                        str+= "<tr><td>"+ val.id +"</td><td>"+ val.diaryDate + "</td><td>"
+                            + val.diaryTimeBegin +"</td><td>"+ val.diaryTimeEnd +"</td><td>"
+                                + val.diaryType +"</td><td>"+ val.diaryContent + "</td></tr>";
+                    });
+                    str += "</ul></table>";
+                    $('.content').append(str);
+                },error:function(){
+                    alert(error)
+                }
+            });
+        })
+    </script>
+</body>
+</html>

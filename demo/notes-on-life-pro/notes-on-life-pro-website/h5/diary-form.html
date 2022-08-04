@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>日记表单</title>
+    <style>
+        .form {
+            width: 900px;
+            height: 550px;
+            text-align:center;
+            margin:0 auto;
+            background-color:coral;
+        }
+        .form_title {
+            font-size: 18px;
+            text-align: left;
+        }
+        .diary_date {
+            text-align: center;
+        }
+        .diary_time_begin {
+            text-align: center;
+        }
+        .diary_time_end {
+            text-align: center;
+        }
+        .diary_type {
+            text-align: center;
+        }
+        .diary_content {
+            text-align: center;
+        }
+        .submit {
+            text-align: center;
+        }
+        .diary_list {
+            width: 900px;
+            height: 50px;
+            margin:0 auto;
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div class="form">
+            <div class="form_title">日记表单:</div>
+            <form id="Form1" name="Form1" onsubmit="return false;">
+                <div class="diary_date">
+                    日记日期：<input type="date" name="date" value="" /><br/><br/>
+                </div>
+                <div class="diary_time_begin">
+                    开始时间：<input type="time" name="time_begin" value="" /><br/><br/>
+                </div>
+                <div class="diary_time_end">
+                    结束时间：<input type="time" name="time_end" value="" /><br/><br/>
+                </div>
+                <div class="diary_type">
+                    日记类型：<input type="radio" name="diary_type" value="日常" />日常 &nbsp;&nbsp;
+                    <input type="radio" name="diary_type" value="学习" />学习&nbsp;&nbsp;
+                    <input type="radio" name="diary_type" value="工作" />工作<br/><br/>
+                </div>
+                <div class="diary_content">
+                    内容：<textarea rows="3" cols="20" id="diary_content_id"></textarea><br /><br/>
+                </div>
+                <div class="submit">
+                    <input type="submit" value="提 交" />
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="diary_list">日记列表：<a href="./diary-list.html"><button>点我跳转到日记列表页面</button></a></div>
+
+    <script type="text/javascript" src="../js/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript">
+
+        $(function() {
+            $('#Form1').submit(function() { //当提交表单时，会发生 submit 事件。
+                // 获取表单元素值
+                var date = document.getElementsByName("date")[0].value;
+                var time_begin = document.getElementsByName("time_begin")[0].value;
+                var time_end = document.getElementsByName("time_end")[0].value;
+                var diary_type = document.getElementsByName("diary_type")[0].value;
+                var diary_content = document.getElementById('diary_content_id').value;
+
+                //此处可做表单验证
+                if (diary_type == "") {
+                    alert("类型不能为空");
+                    return false;
+                }
+
+                var data = {"diaryDate":date,"diaryTimeBegin":time_begin,"diaryTimeEnd":time_end, "diaryType":diary_type, 
+                    "diaryContent":diary_content};
+
+                $.ajax({  
+                    type: "POST",  
+                    url: "http://127.0.0.1:9000/nodesDiary/insert",  
+                    data:JSON.stringify(data),
+                    dataType:"json",  
+                    contentType: "application/json",
+                    async:false,  
+                    cache:false,  
+                    success: function(data) {  
+                        console.log(data);                                                            
+                        if(eval(data.status)==eval(200)){  
+                            alert("表单提交成功！"); 
+                            window.location.href="./diary-list.html";
+                        }else {  
+                            alert("表单提交异常！");  
+                        }  
+                    },  
+                    error: function(json) {  
+                        alert("取消异常，请刷新后重试...");  
+                    }  
+                });  
+                
+            });
+        });
+    </script>
+</body>
+</html>
